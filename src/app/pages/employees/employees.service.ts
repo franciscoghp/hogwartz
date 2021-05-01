@@ -16,7 +16,7 @@ export class EmployeesService {
     this.getEmployees();
   }
 
-
+///Metodo DELETE
   onDeleteEmployees(empId: string): Promise<void> {
     return new Promise(async (resolve, reject) => {
       try {
@@ -28,6 +28,7 @@ export class EmployeesService {
     });
   }
 
+///Metodo POST
   onSaveEmployee(employee: Employee, empId: string): Promise<void> {
     return new Promise(async (resolve, reject) => {
       try {
@@ -41,7 +42,7 @@ export class EmployeesService {
     });
   }
 
-
+///Metodo Get
   private getEmployees(): void {
     this.employees = this.employeesCollection.snapshotChanges().pipe(
       map(actions => actions.map(a => a.payload.doc.data() as Employee))
