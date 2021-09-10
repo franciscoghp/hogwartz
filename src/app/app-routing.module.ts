@@ -1,15 +1,46 @@
+import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { HomeComponent } from './components/home/home.component';
+import { CharactersComponent } from './components/characters/characters.component';
+import { DatatableComponent } from './components/datatable/datatable.component';
+import { StudentsComponent } from './components/students/students.component';
+import { TeachersComponent } from './components/teachers/teachers.component';
+import { NewStudentComponent } from './components/students/new-student/new-student.component';
+import { AllNewStudentsComponent } from './components/students/all-new-students/all-new-students.component';
 
 const routes: Routes = [
-{ path: 'list', loadChildren: () => import('./pages/employees/list/list.module').then(m => m.ListModule) }, 
-{ path: '', loadChildren: () => import('./pages/employees/new/new.module').then(m => m.NewModule) }, 
-{ path: 'details', loadChildren: () => import('./pages/employees/details/details.module').then(m => m.DetailsModule) }, 
-{ path: 'edit', loadChildren: () => import('./pages/employees/edit/edit.module').then(m => m.EditModule) }
+  	{ 
+    	path: '', 
+    	component: HomeComponent,
+  	},
+	{ 
+    	path: 'characters', 
+    	component: CharactersComponent,
+  	},
+	{ 
+    	path: 'characters/datatable', 
+    	component: DatatableComponent,
+  	},
+	{ 
+    	path: 'students', 
+    	component: StudentsComponent,
+  	},	  
+	{ 
+    	path: 'students/new', 
+    	component: NewStudentComponent,
+  	},	  
+	{ 
+    	path: 'all-new-students', 
+    	component: AllNewStudentsComponent,
+  	},
+	{ 
+    	path: 'teachers', 
+    	component: TeachersComponent,
+  	},
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  	imports: [ RouterModule.forRoot(routes) ],
+  	exports: [ RouterModule ]
 })
 export class AppRoutingModule { }

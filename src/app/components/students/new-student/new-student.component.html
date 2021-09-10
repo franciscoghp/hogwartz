@@ -1,0 +1,30 @@
+<div class="col-md-4 mx-auto my-4">
+    <div class="card">
+        <div class="card-header">
+            <h3>New Student</h3>
+        </div>
+        <div class="card-body">
+            <form [formGroup]="form" ngSubmit="save()">
+                <div class="form-group">
+                    <input type="text" formControlName="name" class="form-control" placeholder="Name" autofocus>
+                </div>
+                <div class="form-group">
+                    <input type="text" formControlName="patronus" class="form-control" placeholder="Patronus">
+                </div>
+                <div class="form-group">
+                    <input type="number" formControlName="age" class="form-control" placeholder="Age">
+                </div>
+                <div class="form-group">
+                    <input (change)="uploadPhoto($event.target.files)" type="file" class="form-control">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-success btn-block" [disabled]="form.invalid"
+                     (click)="save()" type="submit">Save</button>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary" routerLink="/students"  type="submit">Return</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

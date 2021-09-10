@@ -1,30 +1,40 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './shared/components/header/header.component';
-import { HeaderModule } from './shared/components/header/header.module';
-import { EmployeeFormModule } from './shared/components/employee-form/employee-form.module';
-import { AngularFireModule } from '@angular/fire';
-import { AngularFirestore } from '@angular/fire/firestore';
-
-import { environment } from './../environments/environment';
-
+import { AppRoutingModule } from './app-routing.module';
+import { HttpClientModule } from '@angular/common/http';
+import { HomeComponent } from './components/home/home.component';
+import { CharactersComponent } from './components/characters/characters.component';
+import { DataTablesModule } from "angular-datatables";
+import { DatatableComponent } from './components/datatable/datatable.component';
+import { StudentsComponent } from './components/students/students.component';
+import { TeachersComponent } from './components/teachers/teachers.component';
+import { NewStudentComponent } from './components/students/new-student/new-student.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AllNewStudentsComponent } from './components/students/all-new-students/all-new-students.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
+    HomeComponent,
+    CharactersComponent,
+    DatatableComponent,
+    StudentsComponent,
+    TeachersComponent,
+    NewStudentComponent,
+    AllNewStudentsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HeaderModule,
-    EmployeeFormModule,
-    AngularFireModule.initializeApp(environment.firebaseConfig)
+    HttpClientModule,
+    DataTablesModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [AngularFirestore],
-  bootstrap: [AppComponent]
+  providers: [],
+  bootstrap: [
+  	AppComponent
+  ]
 })
 export class AppModule { }

@@ -1,0 +1,69 @@
+<div class="card my-4 col-md-4 mx-auto">
+    <div class="card-body">
+        <form [formGroup]="form">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Select the House</label>
+                <select (change)="changeHouse($event.target.value)" formControlName="house" class="form-control">
+                    <option selected>Select</option>
+                    <option value="slytherin">Slytherin</option>
+                    <option value="gryffindor">Gryffindor</option>
+                    <option value="ravenclaw">Ravenclaw</option>
+                    <option value="hufflepuff">Hufflepuff</option>
+                </select>
+                <div class="my-2 row">
+                    <button type="button" (click)="navigate()" 
+                    [disabled]="form.invalid" 
+                    class="btn btn-primary col-md-4 mx-auto">
+                        Show List
+                    </button>
+                    <button type="button" routerLink="/" class="btn btn-primary col-md-4 mx-auto">
+                        Return
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="jumbotron mt-4" style="background: white; padding: 2rem 2rem;;" >
+    <h2 class="text-center" style="font-weight: 300;">
+        Choose the House with wisdom, we dont want to think that you are a Muggle.
+    </h2>
+    <!-- <div class="row align-items-center" style="padding: 10px 3rem">
+        <div class="col-3 col-xl">
+          <button
+            type="button"
+            style="font-size: 14px"
+            class="btn btn-block btn-danger"
+            routerLink="/characters"
+          >
+            Characters
+          </button>
+        </div>
+        <div class="col-3 col-xl">
+          <button
+            type="button"
+            style="font-size: 14px"
+            class="btn btn-block btn-danger"
+            routerLink="/students"
+          >
+            Students
+          </button>
+        </div>
+        <div class="col-3 col-xl">
+          <button
+            type="button"
+            style="font-size: 14px"
+            class="btn btn-block btn-danger"
+            routerLink="/teachers"
+          >
+            Teachers
+          </button>
+        </div>
+    </div>
+    <hr class="my-4"> -->
+    <div class="text-center">
+        <img src="../../../assets/images/houses.jpg" width="500px" alt="Wizard World">
+    </div>
+
+</div>

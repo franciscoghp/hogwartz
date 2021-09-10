@@ -1,7 +1,9 @@
-Para empezar esta app debes seguir estos pasos:
+# Hogwartz - Francisco App
 
-1- Ejecuta el comando "npm install"
+## Instalación
+Para ejectuar este proyecto de Angular debes clonar el repositorio y ejecutar el comando 
+'npm install'
 
-2- Ejecuta el comando "ng serve"
+## Servidor Desarrollo
 
-3- Utiliza la AngendaVitualApp
+Ejecutar 'ng serve' para inciar el servidor. Navegar a `http://localhost:4200/`
